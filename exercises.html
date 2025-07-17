@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elder Exercises</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fbeaee; /* Light Blue Background */
+    }
+    header {
+      background-color: #dcc1e4; /* Dark Blue Header */
+      color: rgb(14, 13, 13);
+      padding: 10px;
+      text-align: center;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    .profile {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .profilepic {
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+    }
+    .dropdown {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      background-color: #f9f9f9; /* Light Gray Dropdown */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      z-index: 1;
+    }
+    .dropdown div {
+      padding: 10px;
+      text-align: center;
+      border-bottom: 1px solid #ddd; /* Divider Line */
+    }
+    .dropdown a {
+      text-decoration: none;
+      color: black;
+    }
+    .profilename {
+      color: white;
+      font-size: 24px;
+    }
+    .logout {
+      color: white;
+      cursor: pointer;
+    }
+    hr {
+      width: 100%;
+      border: 1px solid #090909; /* Dark Border Line */
+      margin: 20px 0;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    h2 {
+      color: #090909;
+      margin-bottom: 20px;
+    }
+    .exercise-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .exercise {
+      text-align: center;
+      margin: 20px;
+      width: 250px;
+    }
+    .exercise img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .exercise h3 {
+      color: #333;
+    }
+    .exercise p {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+<h1>Basic Elder Exercises</h1>
+</header>
+
+<main>
+
+
+    <div class="exercise-container">
+        <!-- Exercise 1 -->
+        <div class="exercise">
+          <img src="e1.jpg" alt="Exercise 1 Image">
+          <h3>Chair Exercises</h3>
+          <p>Simple exercises to improve strength and flexibility while sitting in a chair.</p>
+        </div>
+    
+        <!-- Exercise 2 -->
+        <div class="exercise">
+          <img src="e2.jpg" alt="Exercise 2 Image">
+          <h3>Walking</h3>
+          <p>A low-impact exercise that helps improve cardiovascular health and leg strength.</p>
+        </div>
+    
+        <!-- Exercise 3 -->
+        <div class="exercise">
+          <img src="e3.jpg" alt="Exercise 3 Image">
+          <h3>Stretching</h3>
+          <p>Gentle stretching exercises to improve flexibility and reduce muscle stiffness.</p>
+        </div>
+    
+        <!-- Exercise 4 -->
+        <div class="exercise">
+          <img src="e4.jpg" alt="Exercise 4 Image">
+          <h3>Breathing Exercises</h3>
+          <p>Deep breathing exercises to promote relaxation and improve lung capacity.</p>
+        </div>
+    
+        <!-- Exercise 5 -->
+        <div class="exercise">
+          <img src="e5.jpg" alt="Exercise 5 Image">
+          <h3>Balance Exercises</h3>
+          <p>Exercises to enhance balance and prevent falls, suitable for seniors.</p>
+        </div>
+    
+        <!-- Exercise 6 -->
+        <div class="exercise">
+          <img src="e6.jpg" alt="Exercise 6 Image">
+          <h3>Seated Leg Lifts</h3>
+          <p>Low-impact leg exercises to strengthen muscles without strain.</p>
+        </div>
+      </div>
+    <!-- Add more exercises as needed -->
+  </div>
+</main>
+
+<script>
+  document.getElementById("user").innerHTML = sessionStorage.username;
+
+  function dp() {
+    var d = document.getElementById("dropdown");
+    if (d.style.display == "none") {
+      d.style.display = "flex";
+    } else {
+      d.style.display = 'none';
+    }
+  }
+
+  function logout() {
+    // Add logout functionality here
+    window.location.href = "page.html";
+  }
+</script>
+
+</body>
+</html>
