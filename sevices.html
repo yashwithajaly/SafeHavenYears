@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fbeaee; /* Light Blue Background */
+    }
+    header {
+      background-color: #dcc1e4; /* Dark Blue Header */
+      color: rgb(11, 11, 11);
+      padding: 10px;
+      text-align: center;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    .profile {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .profilepic {
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+    }
+    .dropdown {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      background-color: #f9f9f9; /* Light Gray Dropdown */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      z-index: 1;
+    }
+    .dropdown div {
+      padding: 10px;
+      text-align: center;
+      border-bottom: 1px solid #ddd; /* Divider Line */
+    }
+    .dropdown a {
+      text-decoration: none;
+      color: black;
+    }
+    .profilename {
+      color: rgb(11, 11, 11);
+      font-size: 24px;
+    }
+    .logout {
+      color: white;
+      cursor: pointer;
+    }
+    hr {
+      width: 100%;
+      border: 1px solid #090909; /* Dark Border Line */
+      margin: 20px 0;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    h2 {
+      color: #090909;
+      margin-bottom: 20px;
+    }
+    .service-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .service {
+      text-align: center;
+      margin: 20px;
+      width: 250px;
+    }
+    .service img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .service h3 {
+      color: #333;
+    }
+    .service p {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Our services</h1>
+</header>
+
+<main>
+ 
+
+  <div class="service-container">
+    <!-- Service 1 -->
+    <div class="service">
+      <img src="image1.jpg" alt="Service 1 Image">
+      <h3>Companion Care</h3>
+      <p>We provide companionship for elders who may need assistance or social interaction.</p>
+    </div>
+
+    <!-- Service 2 -->
+    <div class="service">
+      <img src="image2.jpg" alt="Service 2 Image">
+      <h3>Home Assistance</h3>
+      <p>Assistance with daily activities and household tasks to make life easier for elders.</p>
+    </div>
+
+    <!-- Service 3 -->
+    <div class="service">
+      <img src="image3.jpg" alt="Service 3 Image">
+      <h3>Health Monitoring</h3>
+      <p>We monitor health conditions and provide necessary support for a healthier lifestyle.</p>
+    </div>
+
+    <!-- Add more services as needed -->
+  </div>
+</main>
+
+<script>
+  document.getElementById("user").innerHTML = sessionStorage.username;
+
+  function dp() {
+    var d = document.getElementById("dropdown");
+    if (d.style.display == "none") {
+      d.style.display = "flex";
+    } else {
+      d.style.display = 'none';
+    }
+  }
+
+  function logout() {
+    // Add logout functionality here
+    window.location.href = "page.html";
+  }
+</script>
+
+</body>
+</html>
