@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SafeHavenYears</title>
+  <!-- Your existing styles -->
+  <style>
+    /* Your existing styles ... */
+    body {
+    background: url('planBanner.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fbeaee;
+  }
+
+  header {
+    background-color: #dcc1e4;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  #carePlanSection {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .care-plans {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+
+ 
+  .care-plan:hover {
+    background-color: #d8c4e8; /* Light Purple on hover */
+  }
+
+  .care-plan img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+
+  #planDetailsSection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .plan-box {
+    cursor: pointer;
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ffffff; /* White border */
+    border-radius: 10px;
+    background-color: #ffffff; /* White background */
+    color: #090909; /* Black font color */
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+
+  .plan-box:hover {
+    background-color: #d8c4e8; /* Light Purple on hover */
+  }
+
+  .plan-content {
+    text-align: center;
+  }
+
+  .plan-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #090909; /* Black font color */
+  }
+
+  .plan-tagline {
+    font-style: italic;
+    color: #090909; /* Black font color */
+    margin-bottom: 10px;
+  }
+
+  .plan-price h1 {
+    font-size: 20px;
+    color: #3c3c3c;
+    margin-bottom: 10px;
+  }
+
+  .plan-services {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .plan-services li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    color: #3c3c3c; /* Dark Gray font color */
+  }
+
+  .plan-services li::before {
+    content: '\2713'; /* Checkmark symbol */
+    color: #3c3c3c;
+    margin-right: 5px;
+  }
+
+  .request-callback {
+    margin-top: 20px;
+    background-color: #dcc1e4; /* Dark Purple */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+    
+  </style>
+</head>
+<body>
+
+<!-- Your existing header content -->
+
+<header>
+  <!-- ... Your existing content ... -->
+  <hr>
+
+  <!-- Add instructions at the top -->
+  <div id="instructions" style="background-color: #fff; padding: 10px; margin-bottom: 20px;">
+    <!-- ... Your existing instructions ... -->
+  </div>
+  <!-- End of instructions -->
+
+  <h1>SafeHavenYears</h1>
+  <!-- ... Your existing content ... -->
+</header>
+
+<main>
+  
+    
+  <!-- ... Your existing content ... -->
+
+  <!-- Get the Care Plan Section -->
+ 
+    <div id="ratingsContainer">
+      <!-- ... Your existing ratings container ... -->
+    </div>
+    
+    <div id="reviewsContainer">
+      <!-- ... Your existing reviews container ... -->
+    </div>
+  </section>
+
+  <!-- Plan Details Section -->
+  <section id="planDetailsSection">
+    <!-- Display the plan details boxes here -->
+    <!-- Box for Engage Plan -->
+    <!-- Box for Engage Plan -->
+<div class="plan-box" onclick="showPlanDetails('engage')">
+  <img src="engage.jpg" alt="Engage Plan Background" style="width: 100%; border-radius: 10px;">
+  <div class="plan-content">
+    <div class="plan-title">Engage Plan</div>
+    <div class="plan-tagline">Perfect for elders looking for community support</div>
+    <div class="plan-price"><h1>Price: 12999/- per month</h1></div>
+    <ul class="plan-services">
+      <li>moh tv access</li>
+      <li>asscess to help desk</li>
+      <li>call and chat</li>
+    </ul>
+    <div class="request-callback" onclick="payment('engage')">Pay Now</div>
+  </div>
+</div>
+
+   
+    
+    <!-- Box for Empower Plan -->
+    
+    <div class="plan-box" onclick="showPlanDetails('empower')">
+      <img src="empower.jpg" alt="Empower Plan Background" style="width: 100%; border-radius: 10px;">
+      <div class="plan-content">
+        <div class="plan-title">Empower Plan</div>
+        <div class="plan-tagline">Designed for elders looking for medical assistance and pain management</div>
+        <div class="plan-price"><h1>Price:34999/- per month  </h1></div>
+        <ul class="plan-services">
+          <li>moh tv acess </li>
+          <li>assistance from safe heaven years </li>
+          <li>access to help desk </li>
+          <li>24/7 emergency support </li>
+          <li>ultimate doctor teleconsultation </li>
+          <li>+11 additional care services  </li>
+
+        </ul>
+        <div class="request-callback" onclick="payment('empower')">Pay Now</div>
+      </div>
+      </div>
+    </div>
+
+    <!-- Box for Enhance Plan -->
+   
+    <div class="plan-box" onclick="showPlanDetails('enhance')">
+      <img src="enhance.jpg" alt="Enhance Plan Background" style="width: 100%; border-radius: 10px;">
+      <div class="plan-content">
+        <div class="plan-title">Enhance Plan</div>
+        <div class="plan-tagline">For acute health conditions and constant medical monitoring</div>
+        <div class="plan-price"><h1>Price: 22999/-per month </h1></div>
+        <ul class="plan-services">
+          <li>moh tv acess</li>
+          <li>assistance from safe heaven years</li>
+          <li>access to help desk</li>
+          <li>24/7 emergency support </li>
+          
+          <li>+8 additional care services  </li>
+
+        </ul>
+        <div class="request-callback" onclick="payment('enhance')">Pay Now</div>
+      </div>
+      </div>
+    </div>
+  
+</div>
+
+  </section>
+</main>
+<script>
+   function payment(plan) {
+    // You can add further logic or redirect the user to a specific page for phone linking.
+    window.location.href = 'payment.html';
+  }
+</script>
+
+<!-- Your existing scripts -->
+
+</body>
+</html>

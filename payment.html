@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <script src="https://js.stripe.com/v3/"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fbeaee;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #dcc1e4;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        #card-element {
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #dcc1e4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #card-errors {
+            color: #ff0000;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Payment Page</h1>
+
+    <form action="otp.html" method="post">
+
+        <label for="amount">Amount (in Rupees):</label>
+        <input type="text" id="amount" name="amount" required>
+
+        <div id="card-element">
+            <!-- A Stripe Element will be inserted here. -->
+        </div>
+
+        <!-- Used to display form errors. -->
+        <div id="card-errors" role="alert"></div>
+
+        <button type="submit">Pay Now</button>
+    </form>
+
+    <script>
+        var stripe = Stripe('your_stripe_publishable_key');
+        var elements = stripe.elements();
+    
+        // Create an instance of the card Element.
+        var card = elements.create('card', {
+            style: {
+                base: {
+                    fontSize: '16px',
+                    fontFamily: 'Arial, sans-serif',
+                    color: '#333',
+                },
+            },
+            supportedElements: ['cardNumber', 'cardExpiry', 'cardCvc'],
+            hidePostalCode: true,
+        });
+    
+        // Add an instance of the card Element into the `card-element` div.
+        card.mount('#card-element');
+    
+        // Handle real-time validation errors from the card Element.
+        card.addEventListener('change', function(event) {
+            var displayError = document.getElementById('card-errors');
+            if (event.error) {
+                displayError.textContent = event.error.message;
+            } else {
+                displayError.textContent = '';
+            }
+        });
+    </script>
+</body>
+</html>
